@@ -35,9 +35,12 @@ public:
 
 
 private:
+	std::stringstream ID;
 	std::string name;
 	unsigned int age;
 	bool infected;
-	std::stringstream ID;
+	int start_day;
+	int end_day;
+	int duration;
 
 };

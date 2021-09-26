@@ -11,7 +11,6 @@
 struct VertexProperties
 {
 	NursingHome facility;
-
 };
 
 
@@ -21,7 +20,8 @@ struct VertexProperties
 /// </summary>
 struct GraphProperties
 {
-	void RunSimulation();
+	std::string network_name;
+	void RunSimulation(int days = Constants::days);
 };
 
 
@@ -31,5 +31,6 @@ struct GraphProperties
 /// </summary>
 struct EdgeProperties
 {
+	std::string edge_name;
 	double weight;
 };

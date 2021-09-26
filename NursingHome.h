@@ -15,7 +15,7 @@ class NursingHome {
 
 private:
 
-	std::string name;
+	std::string nh_name;
 
 	Worker workers[Constants::numOfWorkers];
 	Resident residents[Constants::numOfResidents];

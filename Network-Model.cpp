@@ -9,7 +9,7 @@
  * The terms "graph" and "network" are used
  * interchangeably throughout this project.
  *
- * @date May 2021
+ * @date September 2021
  * @authors Kyle Kazemini, Jay Love
  *
  */
@@ -25,7 +25,7 @@
 
 
  /**
- *  Create a "Graph" type that encapsulates
+ *  Create a Graph type that encapsulates
  *  edges, vertices, directedness, vertex attributes,
  *  edge attributes, and graph properties.
  */
@@ -36,7 +36,7 @@ typedef boost::adjacency_list
 	VertexProperties,
 	EdgeProperties,
 	GraphProperties>
-	Graph;
+	GraphType;
 
 
 /**
@@ -50,12 +50,14 @@ int main(int argc, char* argv[])
 		InstrumentationTimer timer("Main scope");
 
 		// Create a graph of numOfFacilties vertices.
-		Graph graph(Constants::numOfFacilities);
+		GraphType graph(Constants::numOfFacilities);
 
-		// Run an outbreak simulation on the network by selecting a random vertex.
-		//graph[rand() % Constants::numOfFacilities].facility.RunSimulation();
+		// Run an outbreak simulation on the network.
+		// The RunSimulation() method will handle accessing vertices.
+		graph[boost::graph_bundle_t::graph_bundle].RunSimulation();
 
 	}
 	Instrumentor::Get().EndSession();
+
 	return 0;
 }
