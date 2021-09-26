@@ -1,5 +1,10 @@
 #pragma once
 
+/// <summary>
+/// This namespace contains constants that are used throughout
+/// the project. The purpose of the namespace is to simplify changing
+/// these values. (They only need to be changed in one place)
+/// </summary>
 namespace Constants {
 
 	const int numOfFacilities = 25;

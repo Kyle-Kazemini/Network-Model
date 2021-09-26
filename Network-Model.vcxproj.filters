@@ -56,6 +56,9 @@
     <ClInclude Include="Instrumentor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Properties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

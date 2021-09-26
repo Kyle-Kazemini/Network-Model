@@ -7,6 +7,12 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 
+
+/// <summary>
+/// A Person is either a healthcare worker or resident. This is a super class
+/// for both of those types because they both have things like age, name, 
+/// infected status, and a unique ID.
+/// </summary>
 class Person
 {
 

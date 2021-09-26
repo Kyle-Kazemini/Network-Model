@@ -154,6 +154,7 @@
     <ClInclude Include="MemoryCareFacility.h" />
     <ClInclude Include="NursingHome.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Properties.h" />
     <ClInclude Include="Resident.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>

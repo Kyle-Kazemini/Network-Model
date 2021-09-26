@@ -1,7 +1,9 @@
 /**
  * @remarks
  * This project is an epidemiological network model
- * for COVID-19 in long term care facilities.
+ * for COVID-19 in long term care facilities. Its purpose is to be
+ * efficient and adaptable for future use. This may include experiments for
+ * COVID-19 or other infectious diseases.
  *
  * @note
  * The terms "graph" and "network" are used
@@ -13,14 +15,13 @@
  */
 
 
-#include <iostream>
 #include <fstream>
 #include <boost/graph/adjacency_list.hpp>
 
 #include "Constants.h"
+#include "Properties.h" 
 #include "NursingHome.h"
 #include "Instrumentor.h"
-#include "Properties.cpp" 
 
 
  /**
@@ -28,7 +29,8 @@
  *  edges, vertices, directedness, vertex attributes,
  *  edge attributes, and graph properties.
  */
-typedef boost::adjacency_list<boost::vecS,
+typedef boost::adjacency_list
+<boost::vecS,
 	boost::vecS,
 	boost::undirectedS,
 	VertexProperties,
@@ -51,7 +53,7 @@ int main(int argc, char* argv[])
 		Graph graph(Constants::numOfFacilities);
 
 		// Run an outbreak simulation on the network by selecting a random vertex.
-		graph[rand() % Constants::numOfFacilities].facility.RunSimulation();
+		//graph[rand() % Constants::numOfFacilities].facility.RunSimulation();
 
 	}
 	Instrumentor::Get().EndSession();
