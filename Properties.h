@@ -4,6 +4,7 @@
 #include "NursingHome.h"
 #include "Instrumentor.h"
 
+
 /// <summary>
 /// This struct encapsulates everything that a vertex in the network contains.
 /// Default privacy for a struct is public.
@@ -21,7 +22,9 @@ struct VertexProperties
 struct GraphProperties
 {
 	std::string network_name;
-	void RunSimulation(int days = Constants::days);
+	enum Level { None, Low, Medium, High };
+
+	void RunSimulation(Level level = None, int average_duration = Constants::averageDuration, std::string file_name = "output.csv", int days = Constants::days);
 };
 
 

@@ -8,5 +8,6 @@
 /// </summary>
 class Resident : Person
 {
+
 };
 

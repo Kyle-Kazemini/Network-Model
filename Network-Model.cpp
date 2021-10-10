@@ -25,10 +25,10 @@
 
 
  /**
- *  Create a Graph type that encapsulates
- *  edges, vertices, directedness, vertex attributes,
- *  edge attributes, and graph properties.
- */
+  *  Create a Graph type that encapsulates
+  *  edges, vertices, directedness, vertex attributes,
+  *  edge attributes, and graph properties.
+  */
 typedef boost::adjacency_list
 <boost::vecS,
 	boost::vecS,
@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 		GraphType graph(Constants::numOfFacilities);
 
 		// Run an outbreak simulation on the network.
-		// The RunSimulation() method will handle accessing vertices.
+		// The RunSimulation() method will write summary statistics to a file.
 		graph[boost::graph_bundle_t::graph_bundle].RunSimulation();
 
 	}
