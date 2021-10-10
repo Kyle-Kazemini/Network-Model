@@ -1,4 +1,5 @@
 #include "Properties.h"
+#include <iostream>
 
 
 /// <summary>
@@ -6,7 +7,7 @@
 /// from a random facility. Movement around the network will then cause more infections.
 /// Probabilities are specified in the code.
 /// </summary>
-void GraphProperties::RunSimulation(Level level, int average_duration, std::string file_name, int days)
+void GraphProperties::RunSimulation(GraphType& graph, Level level, int average_duration, std::string file_name, int days)
 {
 	Instrumentor::Get().BeginSession("RunSimulation");
 	{
@@ -21,7 +22,10 @@ void GraphProperties::RunSimulation(Level level, int average_duration, std::stri
 
 		for (int i = 0; i < days; i++)
 		{
-
+			auto vpair = vertices(graph);
+			for (auto iter = vpair.first; iter != vpair.second; iter++) {
+				std::cout << "vertex " << *iter << std::endl;
+			}
 
 			// If a transfer needs to take place between two facilities, do that here.
 

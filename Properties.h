@@ -1,8 +1,32 @@
 #pragma once
 
 #include <string>
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/properties.hpp>
+#include <boost/property_map/property_map.hpp>
+#include <boost/graph/named_function_params.hpp>
 #include "NursingHome.h"
 #include "Instrumentor.h"
+
+
+struct VertexProperties;
+struct EdgeProperties;
+struct GraphProperties;
+
+/**
+  *  Create a Graph type that encapsulates
+  *  edges, vertices, directedness, vertex attributes,
+  *  edge attributes, and graph properties.
+  */
+
+typedef boost::adjacency_list
+<boost::vecS,
+	boost::vecS,
+	boost::undirectedS,
+	VertexProperties,
+	EdgeProperties,
+	GraphProperties>
+	GraphType;
 
 
 /// <summary>
@@ -24,7 +48,7 @@ struct GraphProperties
 	std::string network_name;
 	enum Level { None, Low, Medium, High };
 
-	void RunSimulation(Level level = None, int average_duration = Constants::averageDuration, std::string file_name = "output.csv", int days = Constants::days);
+	void RunSimulation(GraphType& graph, Level level = None, int average_duration = Constants::averageDuration, std::string file_name = "output.csv", int days = Constants::days);
 };
 
 
@@ -37,3 +61,4 @@ struct EdgeProperties
 	std::string edge_name;
 	double weight;
 };
+

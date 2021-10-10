@@ -15,9 +15,6 @@
  */
 
 
-#include <fstream>
-#include <boost/graph/adjacency_list.hpp>
-
 #include "Constants.h"
 #include "Properties.h" 
 #include "NursingHome.h"
@@ -25,24 +22,9 @@
 
 
  /**
-  *  Create a Graph type that encapsulates
-  *  edges, vertices, directedness, vertex attributes,
-  *  edge attributes, and graph properties.
+  * Application entry point.
+  * @return 0 - if the application completed successfully.
   */
-typedef boost::adjacency_list
-<boost::vecS,
-	boost::vecS,
-	boost::undirectedS,
-	VertexProperties,
-	EdgeProperties,
-	GraphProperties>
-	GraphType;
-
-
-/**
- * Application entry point.
- * @return 0 - if the application completed successfully.
- */
 int main(int argc, char* argv[])
 {
 	Instrumentor::Get().BeginSession("Main");
@@ -54,7 +36,7 @@ int main(int argc, char* argv[])
 
 		// Run an outbreak simulation on the network.
 		// The RunSimulation() method will write summary statistics to a file.
-		graph[boost::graph_bundle_t::graph_bundle].RunSimulation();
+		graph[boost::graph_bundle_t::graph_bundle].RunSimulation(graph);
 
 	}
 	Instrumentor::Get().EndSession();
