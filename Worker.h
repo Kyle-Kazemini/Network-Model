@@ -11,5 +11,8 @@ private:
 	bool fullTime;
 	std::string position;
 
+public:
+	Worker() : Person()
+	{}
 };
 

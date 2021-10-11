@@ -6,13 +6,14 @@
 /// </summary>
 NursingHome::NursingHome()
 {
-	//workers.reserve(Constants::numOfWorkers);
-	//residents.reserve(Constants::numOfResidents);
-
 	for (int i = 0; i < Constants::numOfWorkers; i++)
 	{
-		//workers.emplace_back();
-		//residents.emplace_back();
+		workers.push_back(Worker());
+	}
+
+	for (int i = 0; i < Constants::numOfResidents; i++)
+	{
+		residents.push_back(Resident());
 	}
 }
 

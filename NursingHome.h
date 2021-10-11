@@ -13,7 +13,7 @@
 /// </summary>
 class NursingHome {
 
-private:
+public:
 
 	std::string nh_name;
 
@@ -25,7 +25,6 @@ private:
 	int res_res[Constants::numOfResidents][Constants::numOfResidents];
 
 
-public:
 	NursingHome();
 	~NursingHome();
 };

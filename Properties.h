@@ -9,6 +9,7 @@
 #include "Instrumentor.h"
 
 
+// Forward declare these structs so that GraphType knows they exist.
 struct VertexProperties;
 struct EdgeProperties;
 struct GraphProperties;

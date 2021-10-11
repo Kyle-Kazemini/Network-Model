@@ -33,6 +33,8 @@ public:
 
 	void SetStatus(bool b);
 
+	int GetDuration();
+
 
 private:
 	std::stringstream ID;

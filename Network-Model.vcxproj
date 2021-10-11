@@ -144,9 +144,7 @@
     <ClCompile Include="Network-Model.cpp" />
     <ClCompile Include="NursingHome.cpp" />
     <ClCompile Include="Person.cpp" />
-    <ClCompile Include="Resident.cpp" />
     <ClCompile Include="Properties.cpp" />
-    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />

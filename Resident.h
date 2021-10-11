@@ -8,6 +8,8 @@
 /// </summary>
 class Resident : Person
 {
-
+public:
+	Resident() : Person()
+	{}
 };
 

@@ -117,5 +117,10 @@ void Person::SetStatus(bool b)
 	this->infected = b;
 }
 
+int Person::GetDuration()
+{
+	return this->duration;
+}
+
 
 
