@@ -6,7 +6,7 @@
 /// <summary>
 /// A resident IS A person.
 /// </summary>
-class Resident : Person
+class Resident : public Person
 {
 public:
 	Resident() : Person()

@@ -5,7 +5,7 @@
 /// <summary>
 /// A worker IS A person. 
 /// </summary>
-class Worker : Person
+class Worker : public Person
 {
 private:
 	bool fullTime;
@@ -13,6 +13,9 @@ private:
 
 public:
 	Worker() : Person()
-	{}
+	{
+		this->fullTime = true;
+		this->position = "Unkown";
+	}
 };
 

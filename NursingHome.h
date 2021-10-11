@@ -17,8 +17,8 @@ public:
 
 	std::string nh_name;
 
-	std::vector<Worker> workers;
-	std::vector<Resident> residents;
+	std::vector<Worker*> workers;
+	std::vector<Resident*> residents;
 
 	int wor_res[Constants::numOfWorkers][Constants::numOfResidents];
 	int wor_wor[Constants::numOfWorkers][Constants::numOfWorkers];

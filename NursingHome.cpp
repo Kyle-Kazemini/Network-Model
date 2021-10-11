@@ -8,12 +8,12 @@ NursingHome::NursingHome()
 {
 	for (int i = 0; i < Constants::numOfWorkers; i++)
 	{
-		workers.push_back(Worker());
+		workers.push_back(new Worker());
 	}
 
 	for (int i = 0; i < Constants::numOfResidents; i++)
 	{
-		residents.push_back(Resident());
+		residents.push_back(new Resident());
 	}
 }
 

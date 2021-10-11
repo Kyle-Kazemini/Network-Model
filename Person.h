@@ -27,13 +27,13 @@ public:
 	std::string GetName();
 	void SetName(std::string s);
 
-	const std::string GetID();
+	virtual const std::string GetID();
 
-	bool GetStatus();
+	virtual bool GetStatus();
 
-	void SetStatus(bool b);
+	virtual void SetStatus(bool b);
 
-	int GetDuration();
+	virtual int GetDuration();
 
 
 private:

@@ -16,9 +16,8 @@ void GraphProperties::RunSimulation(GraphType& graph, Level level, int average_d
 		// Output summary statistics to a text file
 		std::ofstream file;
 		file.open(file_name);
-		file << "Day" << "Facility Number" << "Unique ID" << "Role" << "Infected Status" << "Infected Duration";
+		file << "Day" << "," << "Facility Number" << "," << "Unique ID" << "Role" << "Infected Status" << "Infected Duration";
 
-		// Randomly select someone to be the first infected person.
 
 		for (int i = 0; i < days; i++)
 		{
@@ -33,16 +32,18 @@ void GraphProperties::RunSimulation(GraphType& graph, Level level, int average_d
 
 				// Check the number of infections for this day. Do any need to end?
 
-				// Write the worker's info for today into the output file.
-				for (Worker var : facility.workers)
+				// Write the worker's info for today into the output file. Note: workers is a vector of pointers,
+				// so we use the arrow operator to dereference the pointer and call the Person class methods.
+				for (auto var : facility.workers)
 				{
-					file << i << *iter + 1 << var.GetID() << "Worker" << var.GetStatus() << var.GetDuration();
+					file << i << *iter + 1 << var->GetID() << "Worker" << var->GetStatus() << var->GetDuration();
 				}
 
-				// Write the resident's info for today into the output file. 
-				for (Resident var : facility.residents)
+				// Write the resident's info for today into the output file. Note: residents is a vector of pointers,
+				// so we use the arrow operator to dereference the pointer and call the Person class methods.
+				for (auto var : facility.residents)
 				{
-					file << i << *iter + 1 << var.GetID() << "Resident" << var.GetStatus() << var.GetDuration();
+					file << i << *iter + 1 << var->GetID() << "Resident" << var->GetStatus() << var->GetDuration();
 				}
 			}
 

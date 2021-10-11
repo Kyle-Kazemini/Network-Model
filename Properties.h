@@ -47,7 +47,10 @@ struct VertexProperties
 struct GraphProperties
 {
 	std::string network_name;
-	enum Level { None, Low, Medium, High };
+	enum Level : char
+	{
+		None = 0, Low = 1, Medium = 2, High = 3
+	};
 
 	void RunSimulation(GraphType& graph, Level level = None, int average_duration = Constants::averageDuration, std::string file_name = "output.csv", int days = Constants::days);
 };
