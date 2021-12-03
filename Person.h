@@ -1,10 +1,10 @@
 #pragma once
 
+
 #include <sstream>
 #include <string>
 #include <stdexcept>
 #include <boost/uuid/uuid.hpp>
-#include <boost/uuid/uuid_io.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 
 
@@ -27,7 +27,7 @@ public:
 	std::string GetName();
 	void SetName(std::string s);
 
-	virtual const std::string GetID();
+	virtual const boost::uuids::uuid GetID();
 
 	virtual bool GetStatus();
 
@@ -37,12 +37,22 @@ public:
 
 
 private:
-	std::stringstream ID;
+	static boost::uuids::random_generator& generator();
+	boost::uuids::uuid ID;
+
 	std::string name;
 	unsigned int age;
+
+	enum class State : char
+	{
+		Susceptible, Exposed, Infected, Recovered
+	};
+
+	State state;
 	bool infected;
 	int start_day;
 	int end_day;
 	int duration;
-
 };
+
+

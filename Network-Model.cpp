@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 		GraphType graph(Constants::numOfFacilities);
 
 		// Run an outbreak simulation on the network.
-		// The RunSimulation() method will write summary statistics to a file.
+		// RunSimulation() will write summary statistics to a file.
 		graph[boost::graph_bundle_t::graph_bundle].RunSimulation(graph);
 
 	}

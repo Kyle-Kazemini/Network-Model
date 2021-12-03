@@ -9,7 +9,6 @@
 class Resident : public Person
 {
 public:
-	Resident() : Person()
-	{}
+	using Person::Person;
 };
 

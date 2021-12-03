@@ -5,6 +5,7 @@
 #include <boost/graph/properties.hpp>
 #include <boost/property_map/property_map.hpp>
 #include <boost/graph/named_function_params.hpp>
+#include <boost/uuid/uuid_io.hpp>  
 #include "NursingHome.h"
 #include "Instrumentor.h"
 
@@ -47,6 +48,8 @@ struct VertexProperties
 struct GraphProperties
 {
 	std::string network_name;
+	std::vector<Person*> perDiemWorkers;
+
 	enum Level : char
 	{
 		None = 0, Low = 1, Medium = 2, High = 3

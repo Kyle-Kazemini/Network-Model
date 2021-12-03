@@ -16,6 +16,8 @@ class NursingHome {
 public:
 
 	std::string nh_name;
+	int numOfWorkers;
+	int numOfResidents;
 
 	std::vector<Worker*> workers;
 	std::vector<Resident*> residents;
@@ -26,5 +28,6 @@ public:
 
 
 	NursingHome();
+	NursingHome(int workers, int residents);
 	~NursingHome();
 };
