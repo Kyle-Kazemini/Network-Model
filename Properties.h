@@ -50,12 +50,13 @@ struct GraphProperties
 	std::string network_name;
 	std::vector<Person*> perDiemWorkers;
 
-	enum Level : char
+	enum TransferLevel : char
 	{
 		None = 0, Low = 1, Medium = 2, High = 3
 	};
 
-	void RunSimulation(GraphType& graph, Level level = None, int average_duration = Constants::averageDuration, std::string file_name = "output.csv", int days = Constants::days);
+	void RunSimulation(GraphType& graph, TransferLevel level = None, int average_duration = Constants::averageDuration,
+		std::string file_name = "output.csv", int days = Constants::days);
 };
 
 

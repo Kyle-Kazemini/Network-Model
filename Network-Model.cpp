@@ -15,6 +15,7 @@
  */
 
 
+#include <iostream>
 #include "Constants.h"
 #include "Properties.h" 
 #include "NursingHome.h"
@@ -40,6 +41,8 @@ int main(int argc, char* argv[])
 
 	}
 	Instrumentor::Get().EndSession();
+
+	std::cout << "Done\n";
 
 	return 0;
 }
